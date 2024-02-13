@@ -1,20 +1,53 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Keyboard, StyleSheet, View } from 'react-native';
+import TaskInput from './components/TaskInput';
+import Tasklist from './components/Tasklist';
+import getRandomPastelColor from './utils/getRandomPastelColor';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+	const [task, setTask] = useState();
+	const [tasklist, setTasklist] = useState([]);
+
+	const handleAddTask = () => {
+		if (task) {
+			Keyboard.dismiss();
+			setTasklist([...tasklist, task]);
+			setTask('');
+		}
+		return null;
+	};
+
+	function completeTask(index) {
+		let itemsCopy = [...tasklist];
+		itemsCopy.splice(index, 1);
+		setTasklist(itemsCopy);
+	}
+
+	function handleTextInput(text) {
+		setTask(text);
+	}
+
+	return (
+		<View style={styles.container}>
+			<Tasklist
+				handleAddTask={handleAddTask}
+				completeTask={completeTask}
+				tasklist={tasklist}
+			/>
+			<TaskInput
+				handleAddTask={handleAddTask}
+				handleTextInput={handleTextInput}
+				task={task}
+			/>
+		</View>
+	);
 }
 
+const randomBackgroundColor = getRandomPastelColor();
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	container: {
+		flex: 1,
+		backgroundColor: randomBackgroundColor,
+	},
 });
