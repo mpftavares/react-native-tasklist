@@ -43,11 +43,9 @@ export default function App() {
 	);
 }
 
-const randomBackgroundColor = getRandomPastelColor();
-
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: randomBackgroundColor,
+		backgroundColor: 'aliceblue',
 	},
 });

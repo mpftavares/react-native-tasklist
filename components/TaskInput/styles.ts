@@ -14,28 +14,23 @@ export const Wrapper = styled.KeyboardAvoidingView<WrapperProps>`
     ${({ behavior }) => behavior === 'padding' ? 'padding-bottom: 60px;' : 'height: 60px;'}
 `;
 
-export const TaskInput = styled.TextInput`
+export const AddTaskInput = styled.TextInput.attrs({
+    placeholderTextColor: "lightgray"
+})`
     padding-vertical: 15px;
     padding-horizontal: 15px;
-    background-color: #fff;
-    border-radius: 60px;
-    border-color: #C0C0C0;
-    border-width: 2px;
-    width: 250px;
-    ::placeholder {
-        color: darkgray;
-    }
+    background-color: white;
+    border-radius: 15px;
+    width: 250px;  
 `;
 
 export const ButtonWrapper = styled.View`
     width: 50px;
     height: 50px;
-    background-color: '#fff';
-    border-radius: 60px;
+    background-color: white;
+    border-radius: 15px;
     justify-content: center;
     align-items: center;
-    border-color: '#C0C0C0';
-    border-width: 2px;
 `;
 
 export const ButtonText = styled.Text`

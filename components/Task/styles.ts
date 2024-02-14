@@ -5,7 +5,7 @@ type SquareProps = {
 }
 
 export const TaskItem = styled.View`
-    background-color: #fff;
+    background-color: white;
     padding: 15px;
     border-radius: 10px;
     flex-direction: row;
