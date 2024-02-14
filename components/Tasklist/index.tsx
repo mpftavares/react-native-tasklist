@@ -1,11 +1,11 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import Task from '../Task';
-import { Items, Title, Wrapper } from './styles';
+import { Items, Wrapper } from './styles';
 
 interface TasklistProps {
 	tasklist: string[];
-	completeTask: () => void;
+	completeTask: (index: number) => void;
 }
 
 export default function Tasklist({ tasklist, completeTask }: TasklistProps) {
@@ -16,7 +16,6 @@ export default function Tasklist({ tasklist, completeTask }: TasklistProps) {
 			}}
 			keyboardShouldPersistTaps="handled">
 			<Wrapper>
-				<Title>Tasklist</Title>
 				<Items>
 					{tasklist.map((item, index) => {
 						return (

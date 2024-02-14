@@ -6,7 +6,7 @@ type SquareProps = {
 
 export const TaskItem = styled.View`
     background-color: white;
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     flex-direction: row;
     align-items: center;

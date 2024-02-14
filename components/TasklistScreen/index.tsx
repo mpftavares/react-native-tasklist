@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Keyboard, StyleSheet, View } from 'react-native';
-import TaskInput from './components/TaskInput';
-import Tasklist from './components/Tasklist';
-import getRandomPastelColor from './utils/getRandomPastelColor';
+import { Keyboard } from 'react-native';
+import TaskInput from '../TaskInput';
+import Tasklist from '../Tasklist';
+import { TasklistWrapper } from './styles';
 
-export default function App() {
-	const [task, setTask] = useState();
+export default function TasklistScreen() {
+	const [task, setTask] = useState('');
 	const [tasklist, setTasklist] = useState([]);
 
 	const handleAddTask = () => {
@@ -28,9 +28,8 @@ export default function App() {
 	}
 
 	return (
-		<View style={styles.container}>
+		<TasklistWrapper>
 			<Tasklist
-				handleAddTask={handleAddTask}
 				completeTask={completeTask}
 				tasklist={tasklist}
 			/>
@@ -39,13 +38,6 @@ export default function App() {
 				handleTextInput={handleTextInput}
 				task={task}
 			/>
-		</View>
+		</TasklistWrapper>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: 'aliceblue',
-	},
-});

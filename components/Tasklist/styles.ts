@@ -5,10 +5,6 @@ export const Wrapper = styled.View`
     padding-horizontal: 20px;
 `;
 
-export const Title = styled.Text`
-    font-size: 24px;
-    font-weight: bold;
-`;
 
 export const Items = styled.View`
     margin-top: 30px;
