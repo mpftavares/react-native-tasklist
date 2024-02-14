@@ -5,7 +5,6 @@ type MenuItemProps = {
 }
 
 export const Menu = styled.View`
-    display: flex;
     align-items: center;
     padding-vertical: 25px;
     padding-horizontal: 20px;

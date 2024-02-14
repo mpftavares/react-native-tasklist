@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
-export const ItemsWrapper = styled.View`
-    padding-top: 80px;
+export const ItemsContainer = styled.View`
+    padding-vertical: 25px;
     padding-horizontal: 20px;
 `;
 
