@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Pressable, Text } from 'react-native';
-import getRandomPastelColor from '../../utils/getRandomPastelColor';
 import { Square, TaskItem, TaskLeft, TaskText } from './styles';
+import useRandomColor from '../../hooks/useRandomColor';
 
 interface TaskProps {
 	title: string;
@@ -10,12 +10,7 @@ interface TaskProps {
 }
 
 export default function Task({ title, index, completeTask }: TaskProps) {
-	const [backgroundColor, setBackgroundColor] = useState<string>('');
-
-	useEffect(() => {
-		const randomBackgroundColor = getRandomPastelColor();
-		setBackgroundColor(randomBackgroundColor);
-	}, []);
+	const backgroundColor = useRandomColor();
 
 	return (
 		<TaskItem>

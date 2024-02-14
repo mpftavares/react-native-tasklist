@@ -1,4 +1,4 @@
-import { Platform, Pressable } from 'react-native';
+import { Platform, TouchableHighlight } from 'react-native';
 import {
 	AddTaskInput,
 	ButtonText,
@@ -24,12 +24,11 @@ export default function TaskInput({
 				value={task}
 				onChangeText={(text: string) => handleTextInput(text)}
 			/>
-
-			<Pressable onPress={() => handleAddTask()}>
+			<TouchableHighlight onPress={() => handleAddTask()}>
 				<ButtonWrapper>
 					<ButtonText>➕</ButtonText>
 				</ButtonWrapper>
-			</Pressable>
+			</TouchableHighlight>
 		</KeyboardWrapper>
 	);
 }

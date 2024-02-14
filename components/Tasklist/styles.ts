@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export const Wrapper = styled.View`
+export const ItemsWrapper = styled.View`
     padding-top: 80px;
     padding-horizontal: 20px;
 `;
